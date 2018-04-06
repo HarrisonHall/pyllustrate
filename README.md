@@ -33,7 +33,7 @@ use rainbow
 }
 ```
 into:
-![PNG of paladin](paladinimage.png "Paladin")
+![PNG of paladin](paladin.png "Paladin")
 
 ## Flags and usage
 * ```-m x``` or ```-magnify x``` will create the image at x times magnification. The ppm created from the image is P3 style, and therefore takes up a large amount of space. Be careful when using magnify as you may get an image much larger than you desired. For this reason, magnify is cut off at 1000, but should probably not be used at over 100. The following two commands are useful if a larger file is needed.
