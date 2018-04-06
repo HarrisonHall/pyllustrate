@@ -1,4 +1,4 @@
-paladin.txt
+george.txt
 use rainbow
 {
 0000000000000000000000000000000

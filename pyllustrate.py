@@ -163,7 +163,6 @@ def definePalette(filename):
             else:
                 paletteList = replaceExistingPalette(paletteList,line)
         x += 1
-    print(paletteList)
     checkFile.close()
     return paletteList
                 
@@ -205,19 +204,38 @@ def getWriteString(filename,palette,multiplier):
             if "{" in line:
                 write = True
 
-def replaceCharacters(fileName,replacedCharacter,replaceCharacter):
-    readFile = open(fileName,"w+")
-    replace = False
+def replaceCharacters(filename,replacedCharacter,replaceCharacter):
+    import copy
+    readFile = open(filename,"r")
+    replaceStrings = []
+    newReplaceStrings = []
     for line in readFile:
+        replaceStrings.append(line)
+    readFile.close()
+    replace = False
+    for line in replaceStrings:
         if "}" in line:
+            newReplaceStrings.append("}")
             break
         if replace == True:
-            for character in line:
-                if character == replacedCharacter:
-                    character = replaceCharacter
+            line = list(line)
+            for character in range(len(line)):
+                if line[character] == replacedCharacter:
+                    line[character] = replaceCharacter
+            newReplaceStrings.append("".join(line))
         if "{" in line:
-            replace == True
+            newReplaceStrings.append("{\n")
+            replace = True
+        else:
+            if replace != True:
+                newReplaceStrings.append(line)
+    readFile = open(filename,"w")
+    for line in newReplaceStrings:
+        readFile.write(line)
+    readFile.close()
 
+# def replaceSpaceorTab(fileName,replacedCharacter,replaceCharacter)
+    
 ##Begin
 #arguments
 checkArguments()
