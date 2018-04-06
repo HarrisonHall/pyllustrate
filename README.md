@@ -11,5 +11,7 @@ I've always loved using applications such as asesprite for quick pixel-art while
 ## Example
 Navigate to the pyllustrate folder and type ```python3.6 pyllustrate.py paladin.txt paladinimage -m 100 -t png``` to convert paladin.txt into a ppm and png.
 
-
+## Current Issues and Development
 Warning: The ppm created from the image is P3 style, and therefore takes up a large amount of space. Be careful when using magnify as you may get an image much larger than you desired. For this reason, magnify is cut off at 1000, but should probably not be used at over 100.
+
+As of now there is only 1 palette, however any user can add more by following the format inside. All characters can work in the image if specified in the pixel's plain-text file. More examples and palettes will be added as the tools in the program are expanded to fit my needs. 
