@@ -21,6 +21,10 @@ fileName = "" # 0 is no new name
 magnify = 1
 imageType = ""
 writeName = ""
+remove = False
+change = False
+changedCharacter = ""
+changeToCharacter = ""
 #myiterator = 1
 
 ##Read command line arguments
@@ -30,6 +34,10 @@ def checkArguments():
     global magnify
     global imageType
     global writeName
+    global remove
+    global change
+    global changedCharacter
+    global changeToCharacter
     commands = sys.argv
     fileName = commands[1]
     writeName = commands[2]
@@ -60,6 +68,12 @@ def checkArguments():
             except:
                 print("Error with magnify")
                 magnify = 1
+        if commands[i] == "-r" or commands[i] == "-remove":
+            remove = True
+        if commands[i] == "-c" or commands[i] == "-change" or commands[i] == "replace":
+            change = True
+            changedCharacter = commands[i+1]
+            changeToCharacter = commands[i+2]
 
 ##Check if file name is taken, if not return file to be written, if so, change ~, if taken, add iterator until not
 def checkFile():
@@ -80,6 +94,8 @@ def writeFile(writeString,writeFile):
             ppm = Image.open(writeFile+".ppm")
             newjpeg = ppm.convert("RGB")
             newjpeg.save(writeFile+".jpg")
+            if remove == True:
+                os.system("rm "+writeFile+".ppm")
         except:
             print("Please install PIL and ImageMagick.")
     if imageType == "png":
@@ -90,6 +106,8 @@ def writeFile(writeString,writeFile):
             ppm = Image.open(writeFile+".ppm")
             newpng = ppm.convert("RGB")
             newpng.save(writeFile+".png")
+            if remove == True:
+                os.system("rm "+writeFile+".ppm")
         except:
             print("Please install PIL and ImageMagick.")
 
@@ -186,9 +204,25 @@ def getWriteString(filename,palette,multiplier):
         if write == False:
             if "{" in line:
                 write = True
-                
+
+def replaceCharacters(fileName,replacedCharacter,replaceCharacter):
+    readFile = open(fileName,"w+")
+    replace = False
+    for line in readFile:
+        if "}" in line:
+            break
+        if replace == True:
+            for character in line:
+                if character == replacedCharacter:
+                    character = replaceCharacter
+        if "{" in line:
+            replace == True
+
 ##Begin
+#arguments
 checkArguments()
+if change == True:
+    replaceCharacters(fileName,changedCharacter,changeToCharacter)
 palette = definePalette(fileName)
 writeString = getWriteString(fileName,palette,magnify)
 writeFile(writeString, writeName)
