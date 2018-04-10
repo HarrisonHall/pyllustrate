@@ -1,0 +1,24 @@
+catman.txt
+use minimal
+{
+rrrrrrrrrrrrrrrrrrrr
+rnnnnnnannngnnnnnnnr
+rnnnnnaannnggnnnnnnr
+rnnnnnaggggggnnnnnnr
+rnnnnaahhhhhggnnnnnr
+rnnnaahhhnhhh3gnnnnr
+rnnnahhhhhhhhhgnnnnr
+rnnnahhhhhhh8hgnnnnr
+rnnaahhhhhh88hgnnnnr
+rnnaahhhhhhh8ggnnnnr
+rnnaahhhhhhhggnnnnnr
+rnnnaahhhhhhgnnnnnnr
+rnnnnahhhhhhggnnnnnr
+rnnnnaghhhhhhgnnnnnr
+rnnnaghhhhhhhggnnnnr
+rnnaghhhhhhhhggggnnr
+rnnaghhh0000hggggnnr
+rnnaggg000000gnnnnnr
+rnnaaag000000gnnnnnr
+rrrrrrrrrrrrrrrrrrrr
+}

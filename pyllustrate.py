@@ -240,6 +240,7 @@ def replaceCharacters(filename,replacedCharacter,replaceCharacter):
 #arguments
 checkArguments()
 if change == True:
+    print("change",changedCharacter,"to",changeToCharacter)
     replaceCharacters(fileName,changedCharacter,changeToCharacter)
 palette = definePalette(fileName)
 writeString = getWriteString(fileName,palette,magnify)
