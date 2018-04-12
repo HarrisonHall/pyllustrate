@@ -42,4 +42,6 @@ into:
 * ```-c x y``` or ```-change x y``` will morph character x in the image text file into character y in the image text file permanently before compiling the image.
 
 ## Current Issues and Development
-As of now there are only 2 palettes, however any user can add more by following the format inside. All characters can work in the image if specified in the pixel's plain-text file. More examples and palettes will be added as the tools in the program are expanded to fit my needs. 
+As of now there are only a few palettes, however any user can add more by following the format inside. All characters can work in the image if specified in the pixel's plain-text file. More examples and palettes will be added as the tools in the program are expanded to fit my needs. 
+
+Fun fact: My profile picture was made using this program. 
